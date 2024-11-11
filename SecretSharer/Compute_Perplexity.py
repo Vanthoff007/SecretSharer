@@ -43,6 +43,12 @@ class PerplexityCalculator:
             text, return_tensors="pt", max_length=self.max_length, padding="max_length"
         ).to(self.device)
 
+        # Check vocabulary 
+        max_vocab_id = model.config.vocab_size - 1
+        
+        if input_ids.max() > max_vocab_id:
+            raise ValueError("Input IDs exceed the model's vocabulary size.")
+
         # Forward pass to calculate loss
         with torch.no_grad():
             outputs = self.model(input_ids, labels=input_ids)
