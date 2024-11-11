@@ -1,6 +1,6 @@
 # tests/test_generate_canaries.py
 import pytest
-from canary_dataset_generator import CanaryDatasetGenerator
+from SecretSharer import CanaryDatasetGenerator 
 
 def test_count_placeholders():
     generator = CanaryDatasetGenerator(
