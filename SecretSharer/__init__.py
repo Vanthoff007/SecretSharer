@@ -10,6 +10,6 @@ __all__ = [
 
 # Package metadata
 __version__ = "0.1.0"
-__author__ = "Your Name"
-__email__ = "your_email@example.com"
+__author__ = "Vanthoff007"
+__email__ = "jiowork951@gmail.com"
 __description__ = "A tool to measure memorization in large language models"
