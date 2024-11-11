@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="Secret-Sharer",
+    name="SecretSharer",
     version="0.1.0",
     description="A Python package for generating canary sequences and computing exposure and perplexity metrics.",
     author="Vanthoff007",
     author_email="18arjav@gmail.com",
-    url="https://github.com/Vanthoff007/Secret-Sharer.git",
+    url="https://github.com/Vanthoff007/SecretSharer.git",
     packages=find_packages(),  # Automatically finds and includes all packages
     py_modules=[
-        "GenerateCanaries",
+        "Generate_Canaries",
         "Compute_Exposure",
         "Compute_Perplexity",
     ],  # Specify each file as a module
@@ -18,7 +18,7 @@ setup(
         "console_scripts": [
             "compute_exposure=Compute_Exposure:main",  # Replace 'main' with actual function to run exposure computation
             "compute_perplexity=Compute_Perplexity:main",  # Replace 'main' with actual function to run perplexity computation
-            "generate_canaries=GenerateCanaries:main",  # Replace 'main' with function to run canary dataset generation
+            "generate_canaries=Generate_Canaries:main",  # Replace 'main' with function to run canary dataset generation
         ]
     },
     classifiers=[
