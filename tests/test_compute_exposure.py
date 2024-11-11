@@ -1,6 +1,6 @@
 # tests/test_compute_exposure.py
 import pytest
-from compute_exposure import ComputeExposure
+from SecretSharer import ComputeExposure 
 
 def test_compute_exposure_rank_method():
     # Set up test data for canary and reference perplexities
