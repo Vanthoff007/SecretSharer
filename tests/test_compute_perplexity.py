@@ -7,8 +7,8 @@ from SecretSharer import PerplexityCalculator
 @pytest.fixture
 def mock_perplexity_calculator():
     tokenizer = AutoTokenizer.from_pretrained("distilbert/distilgpt2", use_fast = False)
-    if self.tokenizer.pad_token is None:
-        self.tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+    if tokenizer.pad_token is None:
+        tokenizer.add_special_tokens({'pad_token': '[PAD]'})
     
     model = AutoModelForCausalLM.from_pretrained("distilbert/distilgpt2", trust_remote_code = True)
     return PerplexityCalculator(model, tokenizer)
