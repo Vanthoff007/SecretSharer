@@ -6,9 +6,8 @@ from perplexity_calculator import PerplexityCalculator
 
 @pytest.fixture
 def mock_perplexity_calculator():
-    # Load a small pre-trained model and tokenizer for testing
-    model = AutoModelForCausalLM.from_pretrained("gpt2")
-    tokenizer = AutoTokenizer.from_pretrained("gpt2")
+    tokenizer = AutoTokenizer.from_pretrained("distilbert/distilgpt2", use_fast = False)
+    model = AutoModelForCausalLM.from_pretrained("distilbert/distilgpt2", trust_remote_code = True)
     return PerplexityCalculator(model, tokenizer)
 
 def test_compute_perplexity(mock_perplexity_calculator):
