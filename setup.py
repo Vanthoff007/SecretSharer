@@ -5,7 +5,7 @@ setup(
     version="0.1.0",
     description="A Python package for generating canary sequences and computing exposure and perplexity metrics.",
     author="Vanthoff007",
-    author_email="18arjav@gmail.com",
+    author_email="jiowork951@gmail.com",
     url="https://github.com/Vanthoff007/SecretSharer.git",
     packages=find_packages(),  # Automatically finds and includes all packages
     py_modules=[
