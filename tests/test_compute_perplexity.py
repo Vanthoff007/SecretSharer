@@ -2,7 +2,7 @@
 import pytest
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from perplexity_calculator import PerplexityCalculator
+from SecretSharer import PerplexityCalculator 
 
 @pytest.fixture
 def mock_perplexity_calculator():
