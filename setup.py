@@ -32,6 +32,6 @@ setup(
     ],
     python_requires=">=3.6",
     include_package_data=True,
-    long_description="A package for generating canary datasets and computing exposure and perplexity metrics.",
+    long_description=long_description,
     long_description_content_type="text/markdown",
 )
