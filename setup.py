@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="SecretSharer",
-    version="1.0.0",
+    version="0.0.1",
     description="A Python package for generating canary sequences and computing exposure and perplexity metrics.",
     author="Vanthoff007",
     author_email="jiowork951@gmail.com",
