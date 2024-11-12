@@ -66,19 +66,24 @@ To get started you can: **Clone the Repository:**
 ---
 
 ---
+# Generate Canaries
 
-# Compute Exposure
-
-## 1. `ComputeExposure`
-This class calculates exposure scores for a set of canaries based on their perplexities relative to reference perplexities.
+## 1. `CanaryDatasetGenerator`
+This class generates a dataset of unique canary sequences and reference sequences with specified patterns and repetitions.
 
 ### Arguments
-- **`perplexities`** *(dict, optional)*: Dictionary where keys are canary identifiers and values are their perplexity values. Default is an empty dictionary `{}`.
-- **`reference_perplexities`** *(list, optional)*: List of perplexity values for reference sequences. Default is an empty list `[]`.
+- **`vocabulary`** *(list of str)*: List of tokens that can be used to generate sequences.
+- **`pattern`** *(str)*: Pattern string with placeholders `{}` for formatting each canary sequence.
+- **`repetitions`** *(list of int)*: List specifying the number of times each canary set should be repeated.
+- **`secrets_per_repetition`** *(list of int)*: List specifying the number of unique canary sequences in each repetition group.
+- **`num_references`** *(int)*: Number of reference sequences to be generated.
+- **`seed`** *(int, optional)*: Seed value for random number generation for reproducibility. Default is `0`.
 
 ### Methods
-- **`compute_exposure_rank_method()`**: Computes exposure scores based on the perplexity ranks.
-  - **Returns**: `dict` where keys are canary identifiers, and values are the exposure scores (as `float`).
+- **`create_dataset()`**: Generates a dataset of canary sequences with repetitions and reference sequences.
+  - **Returns**: `dict` containing:
+    - **`dataset`** *(list of str)*: List of canary sequences, with specified repetitions.
+    - **`references`** *(list of str)*: List of unique reference sequences.
 
 ---
 
@@ -108,22 +113,18 @@ This class computes perplexity scores for a set of sequences (canaries and refer
     - **`reference_perplexities`** *(list of float)*: Perplexity scores for each reference sequence.
 
 ---
-# Generate Canaries
 
-## 3. `CanaryDatasetGenerator`
-This class generates a dataset of unique canary sequences and reference sequences with specified patterns and repetitions.
+# Compute Exposure
+
+## 3. `ComputeExposure`
+This class calculates exposure scores for a set of canaries based on their perplexities relative to reference perplexities.
 
 ### Arguments
-- **`vocabulary`** *(list of str)*: List of tokens that can be used to generate sequences.
-- **`pattern`** *(str)*: Pattern string with placeholders `{}` for formatting each canary sequence.
-- **`repetitions`** *(list of int)*: List specifying the number of times each canary set should be repeated.
-- **`secrets_per_repetition`** *(list of int)*: List specifying the number of unique canary sequences in each repetition group.
-- **`num_references`** *(int)*: Number of reference sequences to be generated.
-- **`seed`** *(int, optional)*: Seed value for random number generation for reproducibility. Default is `0`.
+- **`perplexities`** *(dict, optional)*: Dictionary where keys are canary identifiers and values are their perplexity values. Default is an empty dictionary `{}`.
+- **`reference_perplexities`** *(list, optional)*: List of perplexity values for reference sequences. Default is an empty list `[]`.
 
 ### Methods
-- **`create_dataset()`**: Generates a dataset of canary sequences with repetitions and reference sequences.
-  - **Returns**: `dict` containing:
-    - **`dataset`** *(list of str)*: List of canary sequences, with specified repetitions.
-    - **`references`** *(list of str)*: List of unique reference sequences.
+- **`compute_exposure_rank_method()`**: Computes exposure scores based on the perplexity ranks.
+  - **Returns**: `dict` where keys are canary identifiers, and values are the exposure scores (as `float`).
 
+---
